@@ -15,5 +15,10 @@
         "guzzlehttp/guzzle": "~6.2.1",
         "doctrine/cache": "~1.6",
         "monolog/monolog": "^1.17"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Binghe\\Wechat\\": "src/"
+        }
+    },
 }
