@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-02 18:12:45
+ * @Last Modified time: 2017-06-05 16:49:06
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -12,7 +12,7 @@ use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-
+use Symfony\Component\HttpFoundation\Request;
 /**
 * 
 */
@@ -24,7 +24,12 @@ class Application extends Container
     public function __construct($config)
     {
         parent::__construct();
-        $this['config'] = $config;
+        $this['config'] = function () use ($config) {
+            return new Config($config);
+        };
+        if ($this['config']['debug']) {
+            error_reporting(E_ALL);
+        }
         $this->registerBase();
         $this->registerProviders();
         $this->initializeLogger();
@@ -34,7 +39,9 @@ class Application extends Container
      */
     public function registerBase()
     {
-
+        $this['request'] = function () {
+            return Request::createFromGlobals();
+        };
         if (!empty($this['config']['cache']) && $this['config']['cache'] instanceof CacheInterface) {
             $this['cache'] = $this['config']['cache'];
         } else {
