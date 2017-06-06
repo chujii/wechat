@@ -3,13 +3,14 @@
  * @Author: binghe
  * @Date:   2017-06-05 15:55:29
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-05 15:56:53
+ * @Last Modified time: 2017-06-06 10:56:43
  */
 namespace Binghe\Wechat\Encryption;
+use Binghe\Wechat\Core\Exceptions as CoreException;
 /**
 * 错误代码
 */
-class EncryptionException
+class EncryptionException extends CoreException
 {
     const ERROR_INVALID_SIGNATURE = -40001; // Signature verification failed
     const ERROR_PARSE_XML = -40002; // Parse XML failed
@@ -22,4 +23,5 @@ class EncryptionException
     const ERROR_BASE64_ENCODE = -40009; // Base64 encoding failed
     const ERROR_BASE64_DECODE = -40010; // Base64 decoding failed
     const ERROR_XML_BUILD = -40011; // XML build failed
+    const ILLEGAL_BUFFER = -41003; // Illegal buffer
 }
