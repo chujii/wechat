@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-05 16:49:06
+ * @Last Modified time: 2017-06-07 16:32:22
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -19,7 +19,8 @@ use Symfony\Component\HttpFoundation\Request;
 class Application extends Container
 {
     protected $providers = [
-    ServiceProviders\ComponentVerifyTicketServiceProvider::class
+    ServiceProviders\ComponentVerifyTicketServiceProvider::class,
+    ServiceProviders\AppServerServiceProvider::class
     ];
     public function __construct($config)
     {
