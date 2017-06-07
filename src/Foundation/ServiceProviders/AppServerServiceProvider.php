@@ -3,10 +3,10 @@
  * @Author: binghe
  * @Date:   2017-06-07 16:30:38
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 18:49:26
+ * @Last Modified time: 2017-06-07 18:54:24
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
-use EasyWeChat\Encryption\Encryptor;
+use Binghe\Wechat\Encryption\Encryptor;
 use Binghe\Wechat\Server\AppServer;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
