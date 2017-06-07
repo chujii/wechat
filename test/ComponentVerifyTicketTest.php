@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-01 13:38:26
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-05 10:44:56
+ * @Last Modified time: 2017-06-07 17:22:42
  */
 /**
 * 测试
@@ -27,7 +27,9 @@ $config=[
 ];
 $app = new Application($config);
 // var_dump($app->component_verify_ticket);
-$app->component_verify_ticket->setVerifyTicket('verify_tiket_value0000000');
+// $app->component_verify_ticket->setVerifyTicket('verify_tiket_value0000000');
 
-$app->component_verify_ticket->getVerifyTicket();
+// $app->component_verify_ticket->getVerifyTicket();
+$responser=$app->app_server->handle();
+$responser->send();
 

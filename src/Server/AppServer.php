@@ -3,15 +3,16 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:47:05
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 16:20:33
+ * @Last Modified time: 2017-06-07 17:29:51
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\ComponentVerifyTicket;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Pimple\Container;
 class AppServer extends BaseServer
 {
-    public $pimple;
+    protected $pimple;
     /**
      * component verify ticket
      *
@@ -19,8 +20,8 @@ class AppServer extends BaseServer
      */
     public function __construct(Container $pimple)
     {
-        $this->$pimple=$pimple;
-        parent::__construct($pimple['config']['token'],$pimple['request']);
+        $this->pimple=$pimple;
+        parent::__construct($this->pimple['config']['token'],$this->pimple['request']);
     }
     /**
      * handle authorize event

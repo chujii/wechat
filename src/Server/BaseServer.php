@@ -3,12 +3,13 @@
  * @Author: binghe
  * @Date:   2017-06-07 10:36:14
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 14:03:49
+ * @Last Modified time: 2017-06-07 17:38:18
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\FaultException;
 use Binghe\Wechat\Core\Exceptions\InvalidArgumentException;
 use Binghe\Wechat\Core\Exceptions\RuntimeException;
+use Binghe\Wechat\Core\Exceptions\BadRequestException;
 use Binghe\Wechat\Encryption\Encryptor;
 use Binghe\Wechat\Support\Collection;
 use Binghe\Wechat\Support\Log;
