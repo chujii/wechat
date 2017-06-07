@@ -3,10 +3,10 @@
  * @Author: binghe
  * @Date:   2017-06-05 15:55:29
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-06 10:56:43
+ * @Last Modified time: 2017-06-07 19:08:30
  */
 namespace Binghe\Wechat\Encryption;
-use Binghe\Wechat\Core\Exceptions as CoreException;
+use Binghe\Wechat\Core\Exceptions\Exception as CoreException;
 /**
 * 错误代码
 */
