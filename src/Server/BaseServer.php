@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 10:36:14
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 17:38:18
+ * @Last Modified time: 2017-06-07 18:28:39
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\FaultException;
@@ -105,7 +105,7 @@ class BaseServer
      *
      * @param Encryptor $encryptor
      *
-     * @return Guard
+     * @return BaseServer
      */
     public function setEncryptor(Encryptor $encryptor)
     {
@@ -314,7 +314,7 @@ class BaseServer
 
         if ($this->isSafeMode()) {
             if (!$this->encryptor) {
-                throw new RuntimeException('Safe mode Encryptor is necessary, please use Guard::setEncryptor(Encryptor $encryptor) set the encryptor instance.');
+                throw new RuntimeException('Safe mode Encryptor is necessary, please use BaseServer::setEncryptor(Encryptor $encryptor) set the encryptor instance.');
             }
 
             $message = $this->encryptor->decryptMsg(
