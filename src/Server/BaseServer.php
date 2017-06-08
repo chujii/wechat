@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 10:36:14
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 18:28:39
+ * @Last Modified time: 2017-06-08 17:11:16
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\FaultException;
@@ -15,7 +15,7 @@ use Binghe\Wechat\Support\Collection;
 use Binghe\Wechat\Support\Log;
 use Binghe\Wechat\Support\XML;
 use Binghe\Wechat\Message\AbstractMessage;
-use Binhge\Wechat\Message\Raw as RawMessage;
+use Binghe\Wechat\Message\Raw as RawMessage;
 use Binghe\Wechat\Message\Text;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

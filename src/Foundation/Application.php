@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:46:15
+ * @Last Modified time: 2017-06-08 17:14:12
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -12,7 +12,11 @@ use Monolog\Handler\ErrorLogHandler;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Monolog\Handler\HandlerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Cache\Cache as CacheInterface;
+use Doctrine\Common\Cache\FilesystemCache;
+
 /**
 * 
 */
