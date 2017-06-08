@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 16:32:22
+ * @Last Modified time: 2017-06-08 11:01:28
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -20,6 +20,9 @@ class Application extends Container
 {
     protected $providers = [
     ServiceProviders\ComponentVerifyTicketServiceProvider::class,
+    ServiceProviders\ComponentAccessTokenServiceProvider::class,
+    ServiceProviders\ComponentLoginPageServiceProvider::class,
+    ServiceProviders\PreAuthCodeServiceProvider::class,
     ServiceProviders\AppServerServiceProvider::class
     ];
     public function __construct($config)

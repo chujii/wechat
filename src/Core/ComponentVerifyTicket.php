@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 14:24:24
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-02 17:40:05
+ * @Last Modified time: 2017-06-08 10:24:23
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Traits\CacheTrait;
@@ -24,7 +24,7 @@ class ComponentVerifyTicket
     /**
      * cache key prefix
      */
-    const COMPONENT_VERIFY_TICKET_CACHE_PREFIX='binghe.core.verify_ticket.';
+    const COMPONENT_VERIFY_TICKET_CACHE_PREFIX='binghewechat.core.verify_ticket.';
 
     public function __construct($componentAppId,Cache $cache=null)
     {

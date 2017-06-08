@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-06 10:53:12
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-06 11:07:23
+ * @Last Modified time: 2017-06-07 19:22:28
  */
 namespace Binghe\Wechat\Encryption;
 use Binghe\Wechat\Core\Exceptions\InvalidConfigException;
@@ -265,7 +265,7 @@ class Encryptor
         }
 
         if ($fromAppId !== $appId) {
-            throw new EncryptionException('Invalid appId.', EncryptionException::ERROR_INVALID_APPID);
+            throw new EncryptionException('Invalid appId.'.$fromAppId.'-'.$appId, EncryptionException::ERROR_INVALID_APPID);
         }
 
         return $xml;

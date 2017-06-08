@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 16:30:38
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 18:54:24
+ * @Last Modified time: 2017-06-07 19:39:25
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 use Binghe\Wechat\Encryption\Encryptor;
@@ -20,7 +20,7 @@ class AppServerServiceProvider implements ServiceproviderInterface
     {
         $pimple['encryptor'] = function ($pimple){
             return new Encryptor(
-                    $pimple['config']['app_id'],
+                    $pimple['config']['component_app_id'],
                     $pimple['config']['token'],
                     $pimple['config']['aes_key']
                 );

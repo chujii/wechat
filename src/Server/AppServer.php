@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:47:05
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 17:29:51
+ * @Last Modified time: 2017-06-07 20:07:02
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\ComponentVerifyTicket;
@@ -44,7 +44,7 @@ class AppServer extends BaseServer
         $message = $this->getMessage();
         switch ($message['InfoType']) {
             case 'component_verify_ticket':
-                $this->authorizeHandler->componentVerifyTicket($message, $this->componentVerifyTicket);
+                $this->componentVerifyTicket($message);
                 break;
         }
     }
@@ -54,6 +54,6 @@ class AppServer extends BaseServer
     private function componentVerifyTicket($message)
     {
         $componetVerifyTicket=$this->pimple['component_verify_ticket'];
-        $componetVerifyTicket->setVerifyTicket($message['component_verify_ticket']);
+        $componetVerifyTicket->setVerifyTicket($message['ComponentVerifyTicket']);
     }
 }
