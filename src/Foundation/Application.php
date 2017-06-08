@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 18:04:03
+ * @Last Modified time: 2017-06-08 19:10:22
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;

@@ -3,10 +3,13 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:47:05
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:25:34
+ * @Last Modified time: 2017-06-08 19:30:25
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\ComponentVerifyTicket;
+use Binghe\Wechat\Contracts\AppServerHandlerContract;
+use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
+use Binghe\Wechat\Core\Authorization;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Pimple\Container;

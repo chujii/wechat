@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 16:00:39
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 18:03:45
+ * @Last Modified time: 2017-06-08 19:09:58
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 

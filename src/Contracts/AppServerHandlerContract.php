@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 16:19:21
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 18:42:28
+ * @Last Modified time: 2017-06-08 19:06:30
  */
 namespace Binghe\Wechat\Contracts;
 

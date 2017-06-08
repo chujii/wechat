@@ -3,15 +3,15 @@
  * @Author: binghe
  * @Date:   2017-06-08 13:36:41
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 13:44:39
+ * @Last Modified time: 2017-06-08 19:27:22
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Support\Log;
 use Binghe\Wechat\Core\Exceptions\HttpException;
 use Binghe\Wechat\Traits\CacheTrait;
 use Binghe\Wechat\Traits\HttpTrait;
+use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
 use Doctrine\Common\Cache\Cache;
-
 class Authorization
 {
     use HttpTrait,CacheTrait;
