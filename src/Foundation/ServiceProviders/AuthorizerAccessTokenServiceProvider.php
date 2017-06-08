@@ -3,12 +3,12 @@
  * @Author: binghe
  * @Date:   2017-06-08 15:59:34
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:00:01
+ * @Last Modified time: 2017-06-08 18:03:52
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 
 
-use Binghe\WechatCore\AuthorizerAccessToken;
+use Binghe\Wechat\Core\AuthorizerAccessToken;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 

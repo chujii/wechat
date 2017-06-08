@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 17:52:32
+ * @Last Modified time: 2017-06-08 18:04:03
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -31,7 +31,7 @@ class Application extends Container
     ServiceProviders\AuthorizerInfoServiceProvider::class,
     ServiceProviders\AuthorizerOptionServiceProvider::class,
     ServiceProviders\AuthorizerAccessTokenServiceProvider::class,
-    ServiceProviders\AuthorizerRefreshTokenProvider::class,
+    ServiceProviders\AuthorizerRefreshTokenServiceProvider::class,
     ServiceProviders\ComponentVerifyTicketServiceProvider::class,
     ServiceProviders\ComponentAccessTokenServiceProvider::class,
     ServiceProviders\ComponentLoginPageServiceProvider::class,
