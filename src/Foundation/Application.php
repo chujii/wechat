@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 11:01:28
+ * @Last Modified time: 2017-06-08 16:46:15
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -19,11 +19,20 @@ use Symfony\Component\HttpFoundation\Request;
 class Application extends Container
 {
     protected $providers = [
+    ServiceProviders\AppServerServiceProvider::class,
+    ServiceProviders\AppServerHandlerServiceProvider::class,
+    ServiceProviders\AuthorizationServiceProvider::class,
+    ServiceProviders\AuthorizationInfoServiceProvider::class,
+    ServiceProviders\AuthorizerServiceProvider::class,
+    ServiceProviders\AuthorizerInfoServiceProvider::class,
+    ServiceProviders\AuthorizerOptionServiceProvider::class,
+    ServiceProviders\AuthorizerAccessTokenServiceProvider::class,
+    ServiceProviders\AuthorizerRefreshTokenDefaultProvider::class,
     ServiceProviders\ComponentVerifyTicketServiceProvider::class,
     ServiceProviders\ComponentAccessTokenServiceProvider::class,
     ServiceProviders\ComponentLoginPageServiceProvider::class,
-    ServiceProviders\PreAuthCodeServiceProvider::class,
-    ServiceProviders\AppServerServiceProvider::class
+    ServiceProviders\PreAuthCodeServiceProvider::class
+    
     ];
     public function __construct($config)
     {
