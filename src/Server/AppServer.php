@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:47:05
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 19:30:25
+ * @Last Modified time: 2017-06-08 19:40:34
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\ComponentVerifyTicket;
@@ -78,16 +78,16 @@ class AppServer extends BaseServer
         $message = $this->getMessage();
         switch ($message['InfoType']) {
             case 'component_verify_ticket':
-                $this->authorizeHandler->componentVerifyTicket($message, $this->componentVerifyTicket);
+                $this->appServerHandler->componentVerifyTicket($message, $this->componentVerifyTicket);
                 break;
             case 'authorized':
-                $this->authorizeHandler->authorized($message, $this->authorization);
+                $this->appServerHandler->authorized($message, $this->authorization);
                 break;
             case 'unauthorized':
-                $this->authorizeHandler->unauthorized($message, $this->authorizerRefreshToken);
+                $this->appServerHandler->unauthorized($message, $this->authorizerRefreshToken);
                 break;
             case 'updateauthorized':
-                $this->authorizeHandler->updateauthorized($message, $this->authorization);
+                $this->appServerHandler->updateauthorized($message, $this->authorization);
                 break;
         }
     }
