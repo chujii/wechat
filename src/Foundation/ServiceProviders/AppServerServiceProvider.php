@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 16:30:38
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:24:36
+ * @Last Modified time: 2017-06-08 18:31:20
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 use Binghe\Wechat\Encryption\Encryptor;
@@ -27,7 +27,7 @@ class AppServerServiceProvider implements ServiceproviderInterface
         };
 
         $pimple['app_server'] = function ($pimple) {
-            $auth = new Authorize(
+            $auth = new AppServer(
                 $pimple['config']['token'],
                 $pimple['app_server_handler'],
                 $pimple['component_verify_ticket'],

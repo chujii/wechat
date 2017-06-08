@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 15:02:22
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:20:09
+ * @Last Modified time: 2017-06-08 18:54:15
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
@@ -54,7 +54,6 @@ class AuthorizerAccessToken
      *
      * @var string
      */
-    protected $prefix = 'binghewechat.core.authorizer_access_token.';
 
 
     public function __construct($componentAppId, $authorizerAppId = '', AuthorizerRefreshTokenContract $authorizerRefreshToken, ComponentAccessToken $componentAccessToken, Cache $cache = null)
@@ -64,6 +63,7 @@ class AuthorizerAccessToken
         $this->authorizerRefreshToken = $authorizerRefreshToken;
         $this->componentAccessToken   = $componentAccessToken;
         $this->cache                  = $cache;
+        $this->prefix='binghewechat.core.authorizer_access_token.';
     }
 
 

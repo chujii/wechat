@@ -3,16 +3,16 @@
  * @Author: binghe
  * @Date:   2017-06-08 16:26:52
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 16:30:44
+ * @Last Modified time: 2017-06-08 18:55:42
  */
 namespace Binghe\Wechat\Core;
 
 
-use Binghe\Wechat\Contracts\AuthorizeHandlerContract;
+use Binghe\Wechat\Contracts\AppServerHandlerContract;
 use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
 use Binghe\Wechat\Support\Log;
 
-class AppServerHandler implements AuthorizeHandlerContract
+class AppServerHandler implements AppServerHandlerContract
 {
 
     public function componentVerifyTicket($message, ComponentVerifyTicket $componentVerifyTicket)
