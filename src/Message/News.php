@@ -6,7 +6,7 @@
  *
  */
 
-namespace EasyWeChat\Message;
+namespace Binghe\Wechat\Message;
 
 /**
  * Class News.
