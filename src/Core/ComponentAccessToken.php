@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 10:00:54
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 10:40:42
+ * @Last Modified time: 2017-06-09 10:47:41
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Support\Log;
@@ -119,4 +119,5 @@ class ComponentAccessToken
 
         return $token;
     }
+    
 }

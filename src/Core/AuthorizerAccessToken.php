@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 15:02:22
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 18:54:15
+ * @Last Modified time: 2017-06-09 15:14:13
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
@@ -50,20 +50,22 @@ class AuthorizerAccessToken
      */
     protected $componentAccessToken;
     /**
-     * Cache key prefix.
+     * Query name.
      *
      * @var string
      */
+    protected $queryName = 'access_token';
 
 
     public function __construct($componentAppId, $authorizerAppId = '', AuthorizerRefreshTokenContract $authorizerRefreshToken, ComponentAccessToken $componentAccessToken, Cache $cache = null)
     {
         $this->componentAppId         = $componentAppId;
-        $this->authorizerAppId        = $this->appId = $authorizerAppId;
+        $this->authorizerAppId        = $authorizerAppId;
         $this->authorizerRefreshToken = $authorizerRefreshToken;
         $this->componentAccessToken   = $componentAccessToken;
         $this->cache                  = $cache;
         $this->prefix='binghewechat.core.authorizer_access_token.';
+        $this->setCacheKeyField('authorizerAppId');
     }
 
 
@@ -90,7 +92,20 @@ class AuthorizerAccessToken
         Log::debug('Get token from cache:', [$cached]);
         return $cached;
     }
+    /**
+     * 设置自定义 token.
+     *
+     * @param string $token
+     * @param int    $expires
+     *
+     * @return $this
+     */
+    public function setToken($token, $expires = 7200)
+    {
+        $this->getCache()->save($this->getCacheKey(), $token, $expires - 1500);
 
+        return $this;
+    }
 
     /**
      * Get the access token from WeChat server.
@@ -130,7 +145,40 @@ class AuthorizerAccessToken
      */
     public function setAuthorizerAppId($authorizerAppId)
     {
-        $this->authorizerAppId = $this->appId = $authorizerAppId;
+        $this->authorizerAppId = $authorizerAppId;
         return $this;
+    }
+    /**
+     * Set the query name.
+     *
+     * @param string $queryName
+     *
+     * @return $this
+     */
+    public function setQueryName($queryName)
+    {
+        $this->queryName = $queryName;
+
+        return $this;
+    }
+
+    /**
+     * Return the query name.
+     *
+     * @return string
+     */
+    public function getQueryName()
+    {
+        return $this->queryName;
+    }
+
+    /**
+     * Return the API request queries.
+     *
+     * @return array
+     */
+    public function getQueryFields()
+    {
+        return [$this->queryName => $this->getToken()];
     }
 }
