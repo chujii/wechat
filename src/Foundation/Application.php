@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 19:10:22
+ * @Last Modified time: 2017-06-09 15:41:45
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -23,6 +23,7 @@ use Doctrine\Common\Cache\FilesystemCache;
 class Application extends Container
 {
     protected $providers = [
+    ServiceProviders\MenuServiceProvider::class,
     ServiceProviders\AppServerServiceProvider::class,
     ServiceProviders\AppServerHandlerServiceProvider::class,
     ServiceProviders\AuthorizationServiceProvider::class,

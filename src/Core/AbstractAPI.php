@@ -3,13 +3,14 @@
  * @Author: binghe
  * @Date:   2017-06-09 14:35:13
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-09 15:01:36
+ * @Last Modified time: 2017-06-09 15:46:25
  */
 namespace Binghe\Wechat\Core;
 
 use Binghe\Wechat\Core\Exceptions\HttpException;
-use EBinghe\Wechat\Support\Collection;
+use Binghe\Wechat\Support\Collection;
 use Binghe\Wechat\Support\Log;
+use Binghe\Wechat\Support\Http;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
