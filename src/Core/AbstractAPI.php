@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-09 14:35:13
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-09 15:46:25
+ * @Last Modified time: 2017-06-12 17:08:19
  */
 namespace Binghe\Wechat\Core;
 
@@ -24,14 +24,14 @@ abstract class AbstractAPI
     /**
      * Http instance.
      *
-     * @var \EasyWeChat\Core\Http
+     * @var \Binghe\Wechat\Core\Http
      */
     protected $http;
 
     /**
      * The request token.
      *
-     * @var \EasyWeChat\Core\AccessToken
+     * @var \Binghe\Wechat\Core\AccessToken
      */
     protected $accessToken;
 
@@ -42,7 +42,7 @@ abstract class AbstractAPI
     /**
      * Constructor.
      *
-     * @param \EasyWeChat\Core\AuthorizerAccessToken $accessToken
+     * @param \Binghe\Wechat\Core\AuthorizerAccessToken $accessToken
      */
     public function __construct(AuthorizerAccessToken $accessToken)
     {
@@ -52,7 +52,7 @@ abstract class AbstractAPI
     /**
      * Return the http instance.
      *
-     * @return \EasyWeChat\Core\Http
+     * @return \Binghe\Wechat\Core\Http
      */
     public function getHttp()
     {
@@ -70,7 +70,7 @@ abstract class AbstractAPI
     /**
      * Set the http instance.
      *
-     * @param \EasyWeChat\Core\Http $http
+     * @param \Binghe\Wechat\Core\Http $http
      *
      * @return $this
      */
@@ -84,7 +84,7 @@ abstract class AbstractAPI
     /**
      * Return the current accessToken.
      *
-     * @return \EasyWeChat\Core\AuthorizerAccessToken
+     * @return \Binghe\Wechat\Core\AuthorizerAccessToken
      */
     public function getAccessToken()
     {
@@ -94,7 +94,7 @@ abstract class AbstractAPI
     /**
      * Set the request token.
      *
-     * @param \EasyWeChat\Core\AuthorizerAccessToken $accessToken
+     * @param \Binghe\Wechat\Core\AuthorizerAccessToken $accessToken
      *
      * @return $this
      */
@@ -111,7 +111,7 @@ abstract class AbstractAPI
      * @param string $method
      * @param array  $args
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function parseJSON($method, array $args)
     {
@@ -210,7 +210,7 @@ abstract class AbstractAPI
      *
      * @param array $contents
      *
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     * @throws \Binghe\Wechat\Core\Exceptions\HttpException
      */
     protected function checkAndThrow(array $contents)
     {
