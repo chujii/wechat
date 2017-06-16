@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 10:36:14
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 17:11:16
+ * @Last Modified time: 2017-06-16 14:41:21
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\FaultException;
@@ -204,57 +204,7 @@ class BaseServer
 
         return $message;
     }
-    /**
-     * Handle request.
-     *
-     * @return array
-     *
-     * @throws \Binghe\Wechat\Core\Exceptions\RuntimeException
-     * @throws \Binghe\Wechat\Server\BadRequestException
-     */
-    protected function handleRequest()
-    {
-        $message = $this->getMessage();
-        $response = $this->handleMessage($message);
-
-        return [
-            'to' => $message['FromUserName'],
-            'from' => $message['ToUserName'],
-            'response' => $response,
-        ];
-    }
-
-    /**
-     * Handle message.
-     *
-     * @param array $message
-     *
-     * @return mixed
-     */
-    protected function handleMessage(array $message)
-    {
-        $handler = $this->messageHandler;
-
-        if (!is_callable($handler)) {
-            Log::debug('No handler enabled.');
-
-            return null;
-        }
-
-        Log::debug('Message detail:', $message);
-
-        $message = new Collection($message);
-
-        $type = $this->messageTypeMapping[$message->get('MsgType')];
-
-        $response = null;
-
-        if ($this->messageFilter & $type) {
-            $response = call_user_func_array($handler, [$message]);
-        }
-
-        return $response;
-    }
+    
 
     /**
      * Build reply XML.
