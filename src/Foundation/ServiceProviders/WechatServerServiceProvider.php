@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-16 16:22:34
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-16 16:28:14
+ * @Last Modified time: 2017-06-16 17:54:02
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 use Binghe\Wechat\Encryption\Encryptor;

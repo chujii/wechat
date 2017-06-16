@@ -3,10 +3,15 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:48:56
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-16 16:12:17
+ * @Last Modified time: 2017-06-16 17:20:34
  */
 namespace Binghe\Wechat\Server;
-use Binghe\Wechat\Core\ComponentVerifyTicket;
+use Binghe\Wechat\Core\Exceptions\InvalidArgumentException;
+use Binghe\Wechat\Support\Collection;
+use Binghe\Wechat\Support\Log;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Pimple\Container;
 
 class WechatServer extends BaseServer
 {
@@ -115,4 +120,56 @@ class WechatServer extends BaseServer
     {
         return $this->messageHandler;
     }
+    /**
+     * Handle request.
+     *
+     * @return array
+     *
+     * @throws \EasyWeChat\Core\Exceptions\RuntimeException
+     * @throws \EasyWeChat\Server\BadRequestException
+     */
+    protected function handleRequest()
+    {
+        $message = $this->getMessage();
+        $response = $this->handleMessage($message);
+
+        return [
+            'to' => $message['FromUserName'],
+            'from' => $message['ToUserName'],
+            'response' => $response,
+        ];
+    }
+    /**
+     * Handle message.
+     *
+     * @param array $message
+     *
+     * @return mixed
+     */
+    protected function handleMessage(array $message)
+    {
+        $handler = $this->messageHandler;
+
+        if (!is_callable($handler)) {
+            Log::debug('No handler enabled.');
+
+            return null;
+        }
+
+        Log::debug('Message detail:', $message);
+
+        $message = new Collection($message);
+
+        $type = $this->messageTypeMapping[$message->get('MsgType')];
+
+        $response = null;
+
+        if ($this->messageFilter & $type) {
+            $response = call_user_func_array($handler, [$message]);
+        }
+
+        return $response;
+    }
+    
+
 }
