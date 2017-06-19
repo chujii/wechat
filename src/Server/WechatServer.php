@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:48:56
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-16 17:20:34
+ * @Last Modified time: 2017-06-19 11:12:22
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\InvalidArgumentException;

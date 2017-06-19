@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 13:43:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-07 13:46:45
+ * @Last Modified time: 2017-06-17 11:57:40
  */
 /**
 * Transformer
@@ -13,6 +13,7 @@ namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Message\AbstractMessage;
 use Binhge\Wechat\Message\News;
 use Binghe\Wechat\Message\Text;
+use Binghe\Wechat\Support\Log;
 
 /**
  * Class Transformer.
@@ -38,7 +39,7 @@ class Transformer
             $class = get_class($message);
         }
 
-        $handle = 'transform'.substr($class, strlen('EasyWeChat\Message\\'));
+        $handle = 'transform'.substr($class, strlen('Binghe\Wechat\Message\\'));
 
         return method_exists($this, $handle) ? $this->$handle($message) : [];
     }
@@ -50,6 +51,7 @@ class Transformer
      */
     public function transformText(AbstractMessage $message)
     {
+
         return [
                 'Content' => $message->get('content'),
                ];
