@@ -22,5 +22,14 @@
         "psr-4": {
             "Binghe\\Wechat\\": "src/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Binghe\\Wechat\\Tests\\": "tests/"
+        }
     }
 }
