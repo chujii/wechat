@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-05-31 13:52:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-19 13:23:58
+ * @Last Modified time: 2017-06-22 12:49:42
  */
 namespace Binghe\Wechat\Foundation;
 use Binghe\Wechat\Support\Log;
@@ -73,6 +73,10 @@ class Application extends Container
                 return new FilesystemCache(sys_get_temp_dir());
             };
         }
+        if(!empty($this['config']['language']))
+            $this['language']=$this['config']['language'];
+        else
+            $this['language']='zh_cn';
     }
     /**
      * Register providers.

@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-19 11:37:40
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-19 11:37:57
+ * @Last Modified time: 2017-06-22 13:50:39
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 
@@ -28,11 +28,11 @@ class StaffServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['staff'] = function ($pimple) {
-            return new Staff($pimple['authorizer_access_token']);
+            return new Staff($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $pimple['staff_session'] = $pimple['staff.session'] = function ($pimple) {
-            return new Session($pimple['authorizer_access_token']);
+            return new Session($pimple['authorizer_access_token'],$pimple['language']);
         };
     }
 }

@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-09 14:55:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-09 14:56:48
+ * @Last Modified time: 2017-06-22 13:50:31
  */
 /**
 * 
@@ -30,7 +30,7 @@ class MenuServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['menu'] = function ($pimple) {
-            return new Menu($pimple['authorizer_access_token']);
+            return new Menu($pimple['authorizer_access_token'],$pimple['language']);
         };
     }
 }

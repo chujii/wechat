@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-12 13:45:58
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-12 13:46:22
+ * @Last Modified time: 2017-06-22 13:50:49
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 
@@ -29,15 +29,15 @@ class UserServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['user'] = function ($pimple) {
-            return new User($pimple['authorizer_access_token']);
+            return new User($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $group = function ($pimple) {
-            return new Group($pimple['authorizer_access_token']);
+            return new Group($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $tag = function ($pimple) {
-            return new Tag($pimple['authorizer_access_token']);
+            return new Tag($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $pimple['user_group'] = $group;

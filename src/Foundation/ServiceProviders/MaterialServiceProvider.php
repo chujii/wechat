@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-12 12:56:06
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-12 12:56:44
+ * @Last Modified time: 2017-06-22 13:50:26
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 
@@ -28,11 +28,11 @@ class MaterialServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['material'] = function ($pimple) {
-            return new Material($pimple['authorizer_access_token']);
+            return new Material($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $temporary = function ($pimple) {
-            return new Temporary($pimple['authorizer_access_token']);
+            return new Temporary($pimple['authorizer_access_token'],$pimple['language']);
         };
 
         $pimple['material_temporary'] = $temporary;

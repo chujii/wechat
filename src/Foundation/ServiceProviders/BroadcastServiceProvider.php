@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-12 14:55:42
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-12 14:56:02
+ * @Last Modified time: 2017-06-22 13:51:01
  */
 namespace Binghe\Wechat\Foundation\ServiceProviders;
 
@@ -27,7 +27,7 @@ class BroadcastServiceProvider implements ServiceProviderInterface
     public function register(Container $pimple)
     {
         $pimple['broadcast'] = function ($pimple) {
-            return new Broadcast($pimple['authorizer_access_token']);
+            return new Broadcast($pimple['authorizer_access_token'],$pimple['language']);
         };
     }
 }

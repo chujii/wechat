@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-09 14:35:13
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-12 17:08:19
+ * @Last Modified time: 2017-06-22 12:43:04
  */
 namespace Binghe\Wechat\Core;
 
@@ -11,6 +11,7 @@ use Binghe\Wechat\Core\Exceptions\HttpException;
 use Binghe\Wechat\Support\Collection;
 use Binghe\Wechat\Support\Log;
 use Binghe\Wechat\Support\Http;
+use Binghe\Wechat\Support\Language;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
@@ -21,6 +22,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 abstract class AbstractAPI
 {
+    public $language;
     /**
      * Http instance.
      *
@@ -44,9 +46,10 @@ abstract class AbstractAPI
      *
      * @param \Binghe\Wechat\Core\AuthorizerAccessToken $accessToken
      */
-    public function __construct(AuthorizerAccessToken $accessToken)
+    public function __construct(AuthorizerAccessToken $accessToken,$language='zh_cn')
     {
         $this->setAccessToken($accessToken);
+        $this->language=$language;
     }
 
     /**
@@ -218,8 +221,8 @@ abstract class AbstractAPI
             if (empty($contents['errmsg'])) {
                 $contents['errmsg'] = 'Unknown';
             }
-
-            throw new HttpException($contents['errmsg'], $contents['errcode']);
+            $errMsg=Language::getMessage($contents['errcode'],$contents['errmsg'],$this->language);
+            throw new HttpException($errMsg, $contents['errcode']);
         }
     }
 }
