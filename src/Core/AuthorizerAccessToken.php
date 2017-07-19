@@ -3,11 +3,11 @@
  * @Author: binghe
  * @Date:   2017-06-08 15:02:22
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-09 15:14:13
+ * @Last Modified time: 2017-07-18 17:44:26
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
-use Binghe\Core\Exceptions\HttpException;
+use Binghe\WeChat\Core\Exceptions\HttpException;
 use Binghe\Wechat\Support\Log;
 use Binghe\Wechat\Traits\CacheTrait;
 use Binghe\Wechat\Traits\HttpTrait;
