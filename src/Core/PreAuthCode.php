@@ -3,14 +3,14 @@
  * @Author: binghe
  * @Date:   2017-06-08 10:55:46
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 10:56:39
+ * @Last Modified time: 2017-07-20 09:54:08
  */
 namespace Binghe\Wechat\Core;
 
 
 use Binghe\Wechat\Support\Log;
 use Binghe\Wechat\Traits\HttpTrait;
-use EasyWeChat\Core\Exceptions\HttpException;
+use Binghe\Wechat\Core\Exceptions\HttpException;
 
 class PreAuthCode
 {

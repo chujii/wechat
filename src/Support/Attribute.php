@@ -81,7 +81,7 @@ abstract class Attribute extends Collection
      *
      * @return Attribute
      *
-     * @throws \EasyWeChat\Core\Exceptions\InvalidArgumentException
+     * @throws \Binghe\Wechat\Core\Exceptions\InvalidArgumentException
      */
     public function with($attribute, $value)
     {

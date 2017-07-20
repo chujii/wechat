@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-07 13:43:59
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-17 11:57:40
+ * @Last Modified time: 2017-07-20 09:55:33
  */
 /**
 * Transformer
@@ -145,7 +145,7 @@ class Transformer
     /**
      * Transform news message.
      *
-     * @param array|\EasyWeChat\Message\News $news
+     * @param array|\Binghe\Wechat\Message\News $news
      *
      * @return array
      */

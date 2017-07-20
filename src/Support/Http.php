@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 10:36:42
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 10:37:21
+ * @Last Modified time: 2017-07-20 09:56:05
  */
 namespace Binghe\Wechat\Support;
 
@@ -239,7 +239,7 @@ class Http
      *
      * @return mixed
      *
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     * @throws \Binghe\Wechat\Core\Exceptions\HttpException
      */
     public function parseJSON($body)
     {

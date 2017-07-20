@@ -3,13 +3,13 @@
  * @Author: binghe
  * @Date:   2017-06-08 16:38:38
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-08 18:13:17
+ * @Last Modified time: 2017-07-20 09:54:20
  */
 namespace Binghe\Wechat\Core;
 
 
 use Binghe\Wechat\Traits\HttpTrait;
-use EasyWeChat\Core\Exceptions\HttpException;
+use Binghe\Wechat\Core\Exceptions\HttpException;
 
 class Authorizer
 {

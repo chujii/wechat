@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-09 14:40:02
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-09 14:40:23
+ * @Last Modified time: 2017-07-20 09:55:05
  */
 namespace Binghe\Wechat\Menu;
 
@@ -25,7 +25,7 @@ class Menu extends AbstractAPI
     /**
      * Get all menus.
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function all()
     {
@@ -35,7 +35,7 @@ class Menu extends AbstractAPI
     /**
      * Get current menus.
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function current()
     {
@@ -48,7 +48,7 @@ class Menu extends AbstractAPI
      * @param array $buttons
      * @param array $matchRule
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function add(array $buttons, array $matchRule = [])
     {
@@ -67,7 +67,7 @@ class Menu extends AbstractAPI
      *
      * @param int $menuId
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function destroy($menuId = null)
     {
@@ -83,7 +83,7 @@ class Menu extends AbstractAPI
      *
      * @param string $userId
      *
-     * @return \EasyWeChat\Support\Collection
+     * @return \Binghe\Wechat\Support\Collection
      */
     public function test($userId)
     {

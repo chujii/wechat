@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-08 15:02:22
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-07-18 17:44:26
+ * @Last Modified time: 2017-07-20 09:54:41
  */
 namespace Binghe\Wechat\Core;
 use Binghe\Wechat\Contracts\AuthorizerRefreshTokenContract;
@@ -110,7 +110,7 @@ class AuthorizerAccessToken
     /**
      * Get the access token from WeChat server.
      *
-     * @throws \EasyWeChat\Core\Exceptions\HttpException
+     * @throws \Binghe\Wechat\Core\Exceptions\HttpException
      *
      * @return string
      */

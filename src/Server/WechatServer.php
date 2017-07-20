@@ -3,7 +3,7 @@
  * @Author: binghe
  * @Date:   2017-06-06 17:48:56
  * @Last Modified by:   binghe
- * @Last Modified time: 2017-06-19 11:12:22
+ * @Last Modified time: 2017-07-20 09:55:40
  */
 namespace Binghe\Wechat\Server;
 use Binghe\Wechat\Core\Exceptions\InvalidArgumentException;
@@ -125,8 +125,8 @@ class WechatServer extends BaseServer
      *
      * @return array
      *
-     * @throws \EasyWeChat\Core\Exceptions\RuntimeException
-     * @throws \EasyWeChat\Server\BadRequestException
+     * @throws \Binghe\Wechat\Core\Exceptions\RuntimeException
+     * @throws \Binghe\Wechat\Server\BadRequestException
      */
     protected function handleRequest()
     {
