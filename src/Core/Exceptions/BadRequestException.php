@@ -1,24 +1,10 @@
 <?php
-
-/*
- * This file is part of the overtrue/wechat.
- *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 /**
- * BadRequestException.php.
- *
- * @author    overtrue <i@overtrue.me>
- * @copyright 2015 overtrue <i@overtrue.me>
- *
- * @see      https://github.com/overtrue
- * @see      http://overtrue.me
+ * @Author: binghe
+ * @Date:   2017-06-08 10:06:23
+ * @Last Modified by:   binghe
+ * @Last Modified time: 2017-08-22 17:56:36
  */
-
 namespace Binghe\Wechat\Core\Exceptions;
 
 
